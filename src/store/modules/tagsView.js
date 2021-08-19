@@ -1,3 +1,9 @@
+/**
+ * @/store/modules/tagsView.js
+ * visitedViews 已访问的视图
+ * cachedViews  缓存的视图 keep-alive 缓存的视图 组件的name属性
+ */
+
 const state = {
   visitedViews: [],
   cachedViews: []
@@ -13,13 +19,18 @@ const mutations = {
     )
   },
   ADD_CACHED_VIEW: (state, view) => {
+    // 已经存在的不添加
     if (state.cachedViews.includes(view.name)) return
-    if (!view.meta.noCache) {
-      state.cachedViews.push(view.name)
-    }
+    // noCache的不添加
+    if (view.meta.noCache) return
+    state.cachedViews.push(view.name)
   },
 
   DEL_VISITED_VIEW: (state, view) => {
+    /**
+     * i index
+     * v value
+     */
     for (const [i, v] of state.visitedViews.entries()) {
       if (v.path === view.path) {
         state.visitedViews.splice(i, 1)
@@ -42,7 +53,7 @@ const mutations = {
     if (index > -1) {
       state.cachedViews = state.cachedViews.slice(index, index + 1)
     } else {
-      // if index = -1, there is no cached tags
+      // if index = -1, 没有缓存标签
       state.cachedViews = []
     }
   },
@@ -67,17 +78,19 @@ const mutations = {
 }
 
 const actions = {
+  // 添加
   addView({ dispatch }, view) {
     dispatch('addVisitedView', view)
     dispatch('addCachedView', view)
   },
+
   addVisitedView({ commit }, view) {
     commit('ADD_VISITED_VIEW', view)
   },
   addCachedView({ commit }, view) {
     commit('ADD_CACHED_VIEW', view)
   },
-
+  // 删除
   delView({ dispatch, state }, view) {
     return new Promise(resolve => {
       dispatch('delVisitedView', view)
@@ -101,6 +114,7 @@ const actions = {
     })
   },
 
+  // 删除其他
   delOthersViews({ dispatch, state }, view) {
     return new Promise(resolve => {
       dispatch('delOthersVisitedViews', view)
@@ -124,6 +138,7 @@ const actions = {
     })
   },
 
+  // 删除所有
   delAllViews({ dispatch, state }, view) {
     return new Promise(resolve => {
       dispatch('delAllVisitedViews', view)
@@ -147,6 +162,7 @@ const actions = {
     })
   },
 
+  // 更新
   updateVisitedView({ commit }, view) {
     commit('UPDATE_VISITED_VIEW', view)
   }

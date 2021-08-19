@@ -13,7 +13,7 @@ const users = {
   'editor-token': {
     roles: ['editor'],
     introduction: '我是编辑者',
-    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
     name: 'Normal Editor'
   }
 }
