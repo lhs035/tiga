@@ -1,4 +1,8 @@
-// Just a mock data
+/**
+ * 模拟的路由表数据
+ * constantRoutes
+ * asyncRoutes
+ */
 
 const constantRoutes = [
   {

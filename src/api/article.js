@@ -1,3 +1,12 @@
+/**
+ * 文章
+ * /vue-element-admin/article/list
+ * /vue-element-admin/article/detail
+ * /vue-element-admin/article/pv
+ * /vue-element-admin/article/create
+ * /vue-element-admin/article/update
+ */
+
 import request from '@/utils/request'
 
 export function fetchList(query) {

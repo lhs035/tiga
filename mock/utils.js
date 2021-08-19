@@ -1,4 +1,5 @@
 /**
+ * url query参数转为对象
  * @param {string} url
  * @returns {Object}
  */
@@ -21,6 +22,7 @@ function param2Obj(url) {
 }
 
 /**
+ * 深拷贝
  * This is just a simple version of deep copy
  * Has a lot of edge cases bug
  * If you want to use a perfect deep copy, use lodash's _.cloneDeep

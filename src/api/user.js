@@ -1,3 +1,11 @@
+/**
+ * user api
+ *
+ * login(data) 用户登录 返回token
+ * getInfo(token) 拉取用户信息 返回用户信息
+ * logout() 用户退出
+ */
+
 import request from '@/utils/request'
 
 export function login(data) {

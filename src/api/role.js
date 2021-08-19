@@ -1,3 +1,12 @@
+/**
+ * 获取用户
+ * getRoutes() 获取所有路由表
+ * getRoles() 获取所有角色
+ * addRole(data) 添加角色
+ * updateRole(id, data) 更新角色
+ * deleteRole(id) 删除角色
+ */
+
 import request from '@/utils/request'
 
 export function getRoutes() {
