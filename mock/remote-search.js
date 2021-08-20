@@ -1,7 +1,7 @@
 /**
  * 远程检索
- * username search 用户名
- * transaction list 事务列表
+ * username search 用户名 文章列表
+ * transaction list 事务列表 首页表格数据
  */
 const Mock = require('mockjs')
 

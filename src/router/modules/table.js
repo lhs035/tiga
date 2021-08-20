@@ -35,6 +35,13 @@ const tableRouter = {
       component: () => import('@/views/table/complex-table'),
       name: 'ComplexTable',
       meta: { title: '综合 Table' }
+    },
+    // 新增 测试 unm 表格
+    {
+      path: 'umy-table',
+      component: () => import('@/views/table/umy-table'),
+      name: 'UmyTable',
+      meta: { title: 'umy Table' }
     }
   ]
 }

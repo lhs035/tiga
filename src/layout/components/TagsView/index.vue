@@ -58,7 +58,6 @@ export default {
   },
   watch: {
     $route() {
-      console.log('this.addTags(), this.moveToCurrentTag()')
       this.addTags()
       this.moveToCurrentTag()
     },

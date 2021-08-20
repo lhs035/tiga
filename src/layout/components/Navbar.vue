@@ -1,27 +1,34 @@
 <template>
   <div class="navbar">
+    <!-- 收起侧边栏 -->
     <hamburger
       id="hamburger-container"
       :is-active="sidebar.opened"
       class="hamburger-container"
       @toggleClick="toggleSideBar"
     />
-
+    <!-- 动态面包屑 -->
     <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />
 
+    <!-- 右边菜单 -->
     <div class="right-menu">
       <template v-if="device !== 'mobile'">
+        <!-- 搜索组件 -->
         <search id="header-search" class="right-menu-item" />
 
+        <!-- 错误日志 -->
         <error-log class="errLog-container right-menu-item hover-effect" />
 
+        <!-- 全屏 -->
         <screenfull id="screenfull" class="right-menu-item hover-effect" />
 
+        <!-- 布局大小 -->
         <el-tooltip content="布局大小" effect="dark" placement="bottom">
           <size-select id="size-select" class="right-menu-item hover-effect" />
         </el-tooltip>
       </template>
 
+      <!-- 头像 -->
       <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
           <img :src="avatar + '?imageView2/1/w/80/h/80'" class="user-avatar">
@@ -74,9 +81,11 @@ export default {
     ...mapGetters(['sidebar', 'avatar', 'device'])
   },
   methods: {
+    // 点击切换侧边栏 展开收起
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
     },
+    // 退出登录
     async logout() {
       await this.$store.dispatch('user/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)

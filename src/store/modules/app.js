@@ -1,11 +1,14 @@
 import Cookies from 'js-cookie'
 
 const state = {
+  // 侧边栏
   sidebar: {
     opened: Cookies.get('sidebarStatus') ? !!+Cookies.get('sidebarStatus') : true,
-    withoutAnimation: false
+    withoutAnimation: false // 没有动画
   },
+  // 设备 桌面/手机
   device: 'desktop',
+  // element的尺寸
   size: Cookies.get('size') || 'medium'
 }
 
@@ -34,6 +37,7 @@ const mutations = {
 }
 
 const actions = {
+  // 切换侧边栏状态 点击侧边栏的按钮
   toggleSideBar({ commit }) {
     commit('TOGGLE_SIDEBAR')
   },

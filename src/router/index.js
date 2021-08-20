@@ -11,6 +11,7 @@ import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
 import tableRouter from './modules/table'
 import nestedRouter from './modules/nested'
+import demo2Router from './modules/demo2'
 
 /**
  * Note: sub-menu 只出现在 children.length >= 1
@@ -83,6 +84,7 @@ export const constantRoutes = [
       }
     ]
   },
+
   {
     path: '/documentation',
     component: Layout,
@@ -91,7 +93,7 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/documentation/index'),
         name: 'Documentation',
-        meta: { title: '文档', icon: 'documentation', affix: true }
+        meta: { title: '文档', icon: 'documentation' }
       }
     ]
   },
@@ -161,7 +163,7 @@ export const asyncRoutes = [
       },
       {
         path: 'role',
-        component: () => import('@/views/permission/role'),
+        component: () => import(/* webpackChunkName: "role" */ '@/views/permission/role'),
         name: 'RolePermission',
         meta: {
           title: '角色权限',
@@ -189,6 +191,7 @@ export const asyncRoutes = [
   chartsRouter,
   nestedRouter,
   tableRouter,
+  demo2Router,
 
   {
     path: '/example',

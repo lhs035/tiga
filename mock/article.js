@@ -1,5 +1,6 @@
 /**
  * 文章
+ * 综合实例 文章列表
  * /vue-element-admin/article/list
  * /vue-element-admin/article/detail
  * /vue-element-admin/article/pv

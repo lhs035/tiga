@@ -1,9 +1,7 @@
 <template>
   <div>
-    <div style="margin-bottom:15px;">
-      Your roles: {{ roles }}
-    </div>
-    Switch roles:
+    <div style="margin-bottom:15px;">你的角色: {{ roles }}</div>
+    切换角色:
     <el-radio-group v-model="switchRoles">
       <el-radio-button label="editor" />
       <el-radio-button label="admin" />
@@ -13,6 +11,7 @@
 
 <script>
 export default {
+  name: 'SwitchRoles',
   computed: {
     roles() {
       return this.$store.getters.roles
